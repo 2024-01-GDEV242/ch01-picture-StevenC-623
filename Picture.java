@@ -12,14 +12,16 @@
 public class Picture
 {
     private Square treeBase;
+    private Square treeTrunk;
     private Triangle tree;
     private Triangle treelayer;
     private Circle sun;
     private Circle moon;
-    private Circle lake;
+    private Square treeBase2;
+    private Square treeTrunk2;
     private Triangle tree2;
     private Triangle treelayer2;
-    private Square treeBase2;
+
     private Person jake;
     
     private boolean drawn;
@@ -34,7 +36,6 @@ public class Picture
         treelayer = new Triangle();
         sun = new Circle();
         moon= new Circle();
-        lake= new Circle();
         treeBase2 =new Square();
         tree2 = new Triangle();
         treelayer2 = new Triangle();
@@ -49,18 +50,37 @@ public class Picture
     public void draw()
     {
         if(!drawn) {
-            treeBase.moveHorizontal(50);
-            treeBase.moveVertical(50);
-            treeBase.makeVisible();
+            
+            treeBase.moveHorizontal(-250);
+            treeBase.moveVertical(60);
             treeBase.changeColor("brown");
+            treeBase.makeVisible();
+
+            tree.moveHorizontal(-120);
+            tree.moveVertical(-100);
+            tree.changeSize(170,150);
+            tree.changeColor("green");
+            tree.makeVisible();
+            
+            treelayer.moveHorizontal(-120);
+            treelayer.moveVertical(-100);
+            treelayer.changeSize(110,140);
+            treelayer.changeColor("green");
+            treelayer.makeVisible();
+
+            sun.changeColor("yellow");
+            sun.moveHorizontal(-40);
+            sun.moveVertical(-60);
+            sun.changeSize(80);
+            sun.makeVisible();
+            
+            moon.changeColor("gray");
+            moon.moveHorizontal(-35);
+            moon.moveVertical(-55);
+            moon.makeVisible();
             
             
 
-            sun.changeColor("yellow");
-            sun.moveHorizontal(100);
-            sun.moveVertical(-40);
-            sun.changeSize(80);
-            sun.makeVisible();
             drawn = true;
         }
     }
