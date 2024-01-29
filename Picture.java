@@ -11,6 +11,8 @@
  */
 public class Picture
 {
+    private Square background;
+    private Square ground;
     private Square treeBase;
     private Square treeTrunk;
     private Triangle tree;
@@ -31,6 +33,8 @@ public class Picture
      */
     public Picture()
     {
+        background = new Square();
+        ground = new Square();
         treeBase =new Square();
         tree = new Triangle();
         treelayer = new Triangle();
@@ -50,6 +54,17 @@ public class Picture
     public void draw()
     {
         if(!drawn) {
+            background.changeSize(500);
+            background.moveHorizontal(-310);
+            background.moveVertical(-120);
+            background.changeColor("black");
+            background.makeVisible();
+            
+            ground.changeSize(500);
+            ground.moveHorizontal(-310);
+            ground.moveVertical(70);
+            ground.changeColor("darkGreen");
+            ground.makeVisible();
             
             treeBase.moveHorizontal(-250);
             treeBase.moveVertical(60);
@@ -79,7 +94,27 @@ public class Picture
             moon.moveVertical(-55);
             moon.makeVisible();
             
+            treeBase2.moveHorizontal(45);
+            treeBase2.moveVertical(60);
+            treeBase2.changeColor("brown");
+            treeBase2.makeVisible();
+
+            tree2.moveHorizontal(170);
+            tree2.moveVertical(-100);
+            tree2.changeSize(170,150);
+            tree2.changeColor("green");
+            tree2.makeVisible();
             
+            treelayer2.moveHorizontal(170);
+            treelayer2.moveVertical(-100);
+            treelayer2.changeSize(110,140);
+            treelayer2.changeColor("green");
+            treelayer2.makeVisible();
+            
+            jake.moveVertical(25);
+            jake.moveHorizontal(-30);
+            jake.changeColor("magenta");
+            jake.makeVisible();
 
             drawn = true;
         }
@@ -90,7 +125,16 @@ public class Picture
      */
     public void setBlackAndWhite()
     {
-
+        ground.changeColor("white");
+        treeBase.changeColor("black");
+        tree.changeColor("white");
+        treelayer.changeColor("white");
+        sun.changeColor("white");
+        moon.changeColor("black");
+        treeBase2.changeColor("black");
+        tree2.changeColor("white");
+        treelayer2.changeColor("white");
+        jake.changeColor("black");
     }
 
     /**
@@ -98,6 +142,16 @@ public class Picture
      */
     public void setColor()
     {
+        ground.changeColor("darkGreen");
+        treeBase.changeColor("brown");
+        tree.changeColor("green");
+        treelayer.changeColor("green");
+        sun.changeColor("yellow");
+        moon.changeColor("gray");
+        treeBase2.changeColor("brown");
+        tree2.changeColor("green");
+        treelayer2.changeColor("green");
+        jake.changeColor("magenta");
 
     }
 }
