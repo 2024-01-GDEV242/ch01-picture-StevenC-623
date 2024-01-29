@@ -8,6 +8,9 @@
  * 
  * @author  Steven Coss
  * @version 2024.01.29
+ * 
+ * ment to represent a woodland scene at night time
+ * 
  */
 public class Picture
 {
